@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    {% include "cabecera.html" %}
+    <h1>Mi lista de tareas</h1>
+
+    <ol>
+        {% for tarea in listado %}  
+            {% if tarea != 'Aprender Django' %}
+
+                <li>{{ tarea }}</li>
+            
+            {% else %}
+
+                <li style="color: red; font-size: 25px;">{{ tarea }}</li>
+
+            {% endif %}
+        {% endfor %}
+
+    </ol> 
+
+    <ol>
+        {% for tarea in listado %}  
+            {% if tarea != 'Aprender Django' %}
+
+                <li>{{ tarea|first|lower }}</li>
+            
+            {% else %}
+
+                <li style="color: red; font-size: 25px;">{{ tarea|first|lower }}</li>
+
+            {% endif %}
+        {% endfor %}
+
+    </ol>  
+    
+    <ol>
+        {% for tarea in listado %}  
+            {% if tarea != 'Aprender Django' %}
+
+                <li>{{ tarea|first }}</li>
+            
+            {% else %}
+
+                <li style="color: red; font-size: 25px;">{{ tarea|first }}</li>
+
+            {% endif %}
+        {% endfor %}
+
+    </ol> 
+
+    {% include "footer.html" %}
+</body>
+</html>
